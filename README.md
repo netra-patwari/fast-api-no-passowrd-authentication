@@ -1,4 +1,51 @@
 
+# fast-api-no-passowrd-authentication
+
+This FastAPI project provides endpoints for user authentication and account management using SQLAlchemy for database operations and FastAPI for API development.
+
+
+
+### Tech Stack
+
+FastApi
+
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/netra-patwari/fast-api-no-passowrd-authentication
+```
+
+Install dependencies:
+
+```bash
+  pip install -r requirements.txt
+
+```
+
+Set up your environment variables by creating a .env file in the root directory of the project. Example .env content:
+
+
+```bash
+  URL_DATABASE=postgresql://username:password@localhost/db_name
+  EMAIL_ADD=your_email@example.com
+  EMAIL_PASS=your_email_password #If you do not have a gmail apps password, create a new app with using generate password. Check your apps and passwords https://myaccount.google.com/apppasswords
+
+
+```
+
+Run the FastAPI server:
+
+```bash
+  uvicorn main:app --reload
+
+```
+
+
 ----------
 ----------
 ### API Reference
