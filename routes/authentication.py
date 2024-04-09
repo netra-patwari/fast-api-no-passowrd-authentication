@@ -260,33 +260,7 @@ async def resend_otp(us: Us, db: Session = Depends(get_db)) :
         return error_response(status_code=400 , detail='Invalid email')
 
  
-   
 
-# @router.post('/register')
-# async def register( user_info : User_info , access_token: str = Header(None) ,  db: Session = Depends(get_db)) : 
-#     user = db.query(User).filter(User.access_token == access_token).first()
-#     print(user)
-#     if user and user.email ==  user_info.email and user.is_registered == False:
-#         print(user_info.email)
-        
-        
-#         # if len(user_info.profile_photo.encode('utf-8')) <= 2 * 1024 * 1024:
-#         user.first_name = user_info.first_name
-#         user.last_name = user_info.last_name
-
-#         user.profile_photo = user_info.profile_photo
-#         user.country_code = user_info.country_code
-#         user.phone_no = user_info.phone_no
-        
-        
-#         user.access_token = secrets.token_urlsafe(64)
-#         user.is_registered = True
-        
-#         db.commit()
-#         data = {access_token : 'access_token' }
-#         return success_response(data)
-#     else:
-#         raise error_response(status_code=404, detail="User not found or already registered")
 
 
 class UserNotFoundOrAlreadyRegisteredError(Exception):
@@ -316,8 +290,7 @@ async def register(user_info: User_info, access_token: str = Header(None), db: S
         return success_response(data)
     else:
         error_response(status_code=400 , detail="User not found or already registered")
-    # else:
-    #     raise UserNotFoundOrAlreadyRegisteredError("User not found or already registered")
+
     
     
 @router.post("/login")
